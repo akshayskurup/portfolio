@@ -1,13 +1,12 @@
-import NextAuth from "next-auth";
+import NextAuth, { AuthOptions } from "next-auth";
 import SpotifyProvider from "next-auth/providers/spotify";
-import authOptions from "../../../../lib/authOptions"
 
 const scopes = [
   "user-read-currently-playing",
   "user-read-playback-state",
 ].join(" ");
 
-export const authOptions: AuthOptions = {
+const authOptions: AuthOptions = {
   providers: [
     SpotifyProvider({
       clientId: process.env.SPOTIFY_CLIENT_ID!,
