@@ -1,6 +1,7 @@
+
 import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth/next';
-import { authOptions } from '../auth/[...nextauth]/route';
+import { authOptions } from '../auth/auth-options';
 import { getCurrentlyPlaying } from '@/lib/spotify';
 
 export async function GET() {
@@ -14,7 +15,6 @@ export async function GET() {
   
   if (!currentTrack) {
     return new Response(null, { status: 204 });
-    // return NextResponse.json({ message: "No track currently playing" }, { status: 204 });
   }
   
   const track = {
