@@ -57,6 +57,7 @@ export const authOptions: AuthOptions = {
       }
     }),
   ],
+  secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     async jwt({ token, account }) {
       // Initial sign in
