@@ -1,5 +1,6 @@
-import NextAuth, { AuthOptions } from "next-auth";
+import NextAuth from "next-auth";
 import SpotifyProvider from "next-auth/providers/spotify";
+import authOptions from "../../../../lib/authOptions"
 
 const scopes = [
   "user-read-currently-playing",
